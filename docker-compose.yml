@@ -1,15 +1,16 @@
-version: '3'
+version: "3.7"
 
 services:
-  postgres:
-    image: bitnami/postgresql:latest
-    container_name: fcamara_postgres
+  fcamara_database:
+    image: bitnami/postgresql
+    container_name: fcamara_database
+    restart: always
     ports:
-      - '5432:5432'
+      - "5432:5432"
     environment:
       - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=docker
-      - POSTGRES_DB=polls
+      - POSTGRES_PASSWORD=fcamara
+      - POSTGRES_DB=fcamara
     volumes:
       - fcamara_pg_data:/bitnami/postgresql
 
