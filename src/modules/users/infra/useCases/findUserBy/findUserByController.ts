@@ -7,8 +7,6 @@ export class FindUserByController {
         const {value} = req.params;
         const {target} = req.body;
 
-        console.log(value, target)
-
         const usersRepository = container.resolve('usersRepository');
 
         const findUserByUseCase = new FindUserByUseCase(usersRepository);
@@ -16,7 +14,7 @@ export class FindUserByController {
         const user = await findUserByUseCase.execute(value, target);
 
         if (!user) {
-            throw new Error('User not found!')
+            return res.status(400).send({message: 'User not found!'})
         }
 
         return res.status(200).json(user);

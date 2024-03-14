@@ -7,6 +7,12 @@ export class UpdateUserUseCase {
     ) {
     }
     async execute(id: string, userData: CreateUserDto) {
+        const user = await this.usersRepository.findBy(id, 'id');
+
+        if (!user) {
+            throw new Error('User not found!');
+        }
+
         return await this.usersRepository.update(id, userData);
     }
 }
