@@ -17,11 +17,15 @@ export class CreateUsers1710358376677 implements MigrationInterface {
                         type: 'varchar'
                     },
                     {
+                        name: 'email',
+                        type: 'varchar'
+                    },
+                    {
                         name: 'cpf',
                         type: 'varchar'
                     },
                     {
-                        name: 'data_nascimento',
+                        name: 'birth_date',
                         type: 'timestamp'
                     },
                     {
