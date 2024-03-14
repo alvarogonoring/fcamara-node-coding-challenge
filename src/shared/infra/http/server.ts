@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import express from 'express';
 import '../typeorm';
 import {router} from "@/shared/infra/http/routes";
+import '@/shared/container';
 
 const app = express();
 
