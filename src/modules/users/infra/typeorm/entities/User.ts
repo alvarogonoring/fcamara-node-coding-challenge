@@ -9,6 +9,8 @@ export class User {
 
     cpf: string;
 
+    admin = false;
+
     birth_date: Date;
 
     address: string;
